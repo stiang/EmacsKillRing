@@ -20,14 +20,19 @@ the new commands, like so:
     { "keys": ["ctrl+w"], "command": "expand_selection", "args": {"to": "word"} },
     { "keys": ["ctrl+k"], "command": "emacs_kill_line" },
     { "keys": ["ctrl+y"], "command": "paste" },
-    { "keys": ["ctrl+u"], "command": "prev_view" },
-    { "keys": ["ctrl+i"], "command": "next_view" },
-    { "keys": ["ctrl+shift+y"], "command": "emacs_yank_choice" },
     { "keys": ["ctrl+space"], "command": "emacs_set_mark" },
     { "keys": ["ctrl+w"], "command": "emacs_kill_to_mark" },
     { "keys": ["alt+w"], "command": "emacs_kill_ring_save" },
     { "keys": ["ctrl+g"], "command": "cancel_mark" }
 
+
+There is a small gotcha here: I have set up ctrl+w to select the current word,
+like in TextMate, but that doesn’t fit well with the default Emacs key bindings,
+where ctrl+w means kill-region. So there is a simple check in EmacsKillRing.py
+which switches between these two behaviors, based on whether a mark has been set.
+If a mark has been set, do kill-region. If not, do expand_selection. For me, this
+works quite well, but it would of course be much better to use contexts for this.
+Please get in touch if you know how to create a custom context in a plugin.
 
 [1]: http://sublime-text-community-packages.googlecode.com/svn/pages/EmacsKillRing.html
 [2]: http://www.sublimetext.com/2
