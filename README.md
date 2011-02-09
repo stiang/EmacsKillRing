@@ -1,4 +1,6 @@
-## Emacs Kill Ring for Sublime Text 2
+# Emacs Kill Ring for Sublime Text 2
+
+## Background
 
 This is an adaption of the [EmacsKillRing][1] for [Sublime Text 2][2]. It was created 
 for the ST2 alpha, so it may need some adjustments to work with the final release.
@@ -10,7 +12,7 @@ when a mark has been set.
 Please note that I am not very familiar with Python, so there may be extremely
 silly bugs. I’d be happy to include your improvements.
 
-### Usage
+## Usage
 
 Copy EmacsKillRing.py to your Packages/User folder, then add some key-bindings for
 the new commands, like so:
