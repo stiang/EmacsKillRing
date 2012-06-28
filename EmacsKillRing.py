@@ -331,5 +331,5 @@ class EmacsMarkDetector(sublime_plugin.EventListener):
     viewName = marks.viewIdentifier(view)
     if viewName in marks.innerMarks:
       mark = marks.innerMarks[viewName]
-      view.add_regions('set-mark-region', [sublime.Region(mark, point)], 'string')
+      view.add_regions('set-mark-region', [sublime.Region(mark, point)], 'markup.other')
 
